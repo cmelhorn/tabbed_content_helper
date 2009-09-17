@@ -1,0 +1,15 @@
+# Provides a tabbed_content helper method for easily creating a set of tabbed panels:
+#
+#   tabbed_content do |tab|
+#     tab.make_tab('profile', "<p>Content for the profile panel</p>")
+#     tab.make_tab('email', "<p>Content for the email panel</p>")
+#     tab.activity('recent activity', "<p>Content for the activity panel</p>")
+#   end
+#
+# === Author
+# Charles Melhorn, http://the.dourlad.com
+#
+# === License
+# Copyright (c) 2009 Charles Melhorn. Licensed under the MIT License:
+# http://www.opensource.org/licenses/mit-license.php
+
