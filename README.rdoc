@@ -48,7 +48,7 @@ the default id of _tabs_, and (unobtrusive) javascript for tab selection:
     <div id="tab_panels">
       <div id="tab_panel_profile" style="display: block;"><div><p>Content for the profile panel</p></div></div>
       <div id="tab_panel_email-settings" style="display: none;"><div><p>Content for the email settings panel</p></div></div>
-      <div id="tab_panel_overview" style="display: none;"><div><p>Content for the recent activity panel</p></div></div>
+      <div id="tab_panel_activity" style="display: none;"><div><p>Content for the recent activity panel</p></div></div>
     </div>
   </div>
   <script type="text/javascript">
