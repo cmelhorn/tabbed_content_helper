@@ -6,10 +6,33 @@ Provides a tabbed_content helper method for easily creating a set of tabbed pane
     tab.activity('recent activity', "<p>Content for the activity panel</p>")
   end
 
+=== Installation
+Copy tabbed_content_helper.rb into RAILS_ROOT/app/helpers.
+
+The typical usage of the helper requires prototype (prototype.js) and, if you opt
+to use one of the animation effects, scriptaculous (effects.js).
+
+However, it's possible to use the helper with another javascript library or with
+custom code by configuring it to generate only the tab markup. See the :html_only
+option for details.
+
+=== Usage
+
+  tabbed_content(tab_container_id = "tabs", options = {}){|tab_builder| block}
+
+==== Options
+  * <tt>:html_only</tt> - If true, only html markup is generated. Set this if you want to
+    use custom javascript or some library other than prototype/scriptaculous (e.g. jQuery)
+    for tab control. Default is +false+.
+  * <tt>:effect</tt> - Controls the effect used to show or hide the active tab. Valid values
+    are <tt>nil</tt> and <tt>:appear</tt>. Default is +nil+.
+
 === Author
 Charles Melhorn, http://the.dourlad.com
 
 === License
 Copyright (c) 2009 Charles Melhorn. Licensed under the MIT License:
 http://www.opensource.org/licenses/mit-license.php
+
+
 
