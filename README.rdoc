@@ -7,10 +7,10 @@ Provides a tabbed_content helper method for easily creating a set of tabbed pane
   end
 
 === Installation
-Copy tabbed_content_helper.rb into RAILS_ROOT/app/helpers.
+Copy <tt>tabbed_content_helper.rb</tt> into RAILS_ROOT/app/helpers.
 
-The typical usage of the helper requires prototype (<tt>prototype.js</tt>) and, if you opt
-to use one of the animation effects, scriptaculous (<tt>effects.js</tt>).
+The typical usage of the helper requires _prototype_ (<tt>prototype.js</tt>) and, if you opt
+to use one of the animation effects, _scriptaculous_ (<tt>effects.js</tt>).
 
 However, it's possible to use the helper with another javascript library or with
 custom code by configuring it to generate only the tab markup. See the <tt>:html_only</tt>
@@ -18,7 +18,7 @@ option for details.
 
 === Usage
 
-  tabbed_content(tab_container_id = "tabs", options = {}){|tab_builder| block}
+  tabbed_content(tab_container_id = "tabs", options = {}){|tab_builder| ... }
 
 ==== Options
 * <tt>:html_only</tt> - If true, only html markup is generated. Set this if you want to
@@ -26,6 +26,33 @@ option for details.
   for tab control. Default is +false+.
 * <tt>:effect</tt> - Controls the effect used to show or hide the active tab. Valid values
   are <tt>nil</tt> and <tt>:appear</tt>. Default is +nil+.
+
+==== Examples
+
+  tabbed_content do |tab|
+    tab.make_tab('profile', "<p>Content for the profile panel</p>")
+    tab.make_tab('email settings', "<p>Content for the email settings panel</p>")
+    tab.activity('recent activity', "<p>Content for the recent activity panel</p>")
+  end
+
+This will generate the html for tab headers and panels, wrapped in a container <tt><div></tt> with
+the default id of _tabs_, and (unobtrusive) javascript for tab selection:
+
+  <div id="tabs">
+    <ul id="tab_headers">
+      <li id="tab_header_profile"><a href="#profile">profile</a></li>
+      <li id="tab_header_email-settings"><a href="#email-settings">email settings</a></li>
+      <li id="tab_header_activity"><a href="#activity">recent activity</a></li>
+    </ul>
+    <div id="tab_panels">
+      <div id="tab_panel_profile" style="display: none;"><div><p>Content for the profile panel</p></div></div>
+      <div id="tab_panel_email-settings" style="display: none;"><div><p>Content for the email settings panel</p></div></div>
+      <div id="tab_panel_overview" style="display: none;"><div><p>Content for the recent activity panel</p></div></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  ...
+  </script>
 
 === Author
 Charles Melhorn, http://the.dourlad.com
