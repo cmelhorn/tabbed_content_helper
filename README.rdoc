@@ -26,6 +26,7 @@ option for details.
   for tab control. Default is +false+.
 * <tt>:effect</tt> - Controls the effect used to show or hide the active tab. Valid values
   are <tt>nil</tt> and <tt>:appear</tt>. Default is +nil+.
+<tt></tt>
 
 ==== Examples
 
@@ -40,12 +41,12 @@ the default id of _tabs_, and (unobtrusive) javascript for tab selection:
 
   <div id="tabs">
     <ul id="tab_headers">
-      <li id="tab_header_profile"><a href="#profile">profile</a></li>
+      <li class="ui-tabs-selected" id="tab_header_profile"><a href="#profile">profile</a></li>
       <li id="tab_header_email-settings"><a href="#email-settings">email settings</a></li>
       <li id="tab_header_activity"><a href="#activity">recent activity</a></li>
     </ul>
     <div id="tab_panels">
-      <div id="tab_panel_profile" style="display: none;"><div><p>Content for the profile panel</p></div></div>
+      <div id="tab_panel_profile" style="display: block;"><div><p>Content for the profile panel</p></div></div>
       <div id="tab_panel_email-settings" style="display: none;"><div><p>Content for the email settings panel</p></div></div>
       <div id="tab_panel_overview" style="display: none;"><div><p>Content for the recent activity panel</p></div></div>
     </div>
