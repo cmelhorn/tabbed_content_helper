@@ -2,8 +2,8 @@ Provides a tabbed_content helper method for easily creating a set of tabbed pane
 
   tabbed_content do |tab|
     tab.make_tab('profile', "<p>Content for the profile panel</p>")
-    tab.make_tab('email', "<p>Content for the email panel</p>")
-    tab.activity('recent activity', "<p>Content for the activity panel</p>")
+    tab.make_tab('email settings', "<p>Content for the email settings panel</p>")
+    tab.activity('recent activity', "<p>Content for the recent activity panel</p>")
   end
 
 === Installation
@@ -20,6 +20,10 @@ option for details.
 
   tabbed_content(tab_container_id = "tabs", options = {}){|tab_builder| ... }
 
+The tabbed_content method yields a tab builder object which is used to add tabs by invoking
+#make_tab (uses the header label as the tab id) or via a "named tab"-style call (uses the
+method name as the tab id).
+
 ==== Options
 * <tt>:html_only</tt> - If true, only html markup is generated. Set this if you want to
   use custom javascript or some library other than prototype/scriptaculous (e.g. jQuery)
@@ -29,6 +33,8 @@ option for details.
 <tt></tt>
 
 ==== Examples
+
+===== Example 1
 
   tabbed_content do |tab|
     tab.make_tab('profile', "<p>Content for the profile panel</p>")
