@@ -34,7 +34,7 @@ method name as the tab id).
 
 ==== Examples
 
-===== Example 1
+Example 1
 
   tabbed_content do |tab|
     tab.make_tab('profile', "<p>Content for the profile panel</p>")
@@ -60,6 +60,17 @@ the default id of _tabs_, and (unobtrusive) javascript for tab selection:
   <script type="text/javascript">
   ...
   </script>
+
+Example 2
+
+  tabbed_content("mytabs", :effect => :appear) do |tab|
+    tab.make_tab('profile', "<p>Content for the profile panel</p>")
+    tab.make_tab('email settings', "<p>Content for the email settings panel</p>", :active)
+  end
+
+Tabs will be displayed or hidden using the :appear animation effect. Note that normally
+the first tab created will be initialized as the active tab, but passing the <tt>:active</tt> symbol
+as the third argument to #make_tab (or its "named tab" equivalents) will override that behavior. 
 
 === Author
 Charles Melhorn, http://the.dourlad.com
