@@ -72,6 +72,20 @@ Tabs will be displayed or hidden using the :appear animation effect. Note that n
 the first tab created will be initialized as the active tab, but passing the <tt>:active</tt> symbol
 as the third argument to #make_tab (or its "named tab" equivalents) will override that behavior. 
 
+==== Styling the tabs
+The following CSS selectors may be used to style the tab elements:
+
+  div#tabs {} /* or div#your_tab_container_id */
+  ul#tab_headers {}
+  ul#tab_headers li {}
+  ul#tab_headers li a {}
+  div#tab_panels {}
+  .ui-tabs-selected {}
+
+Example
+
+  TBD
+
 === Author
 Charles Melhorn, http://the.dourlad.com
 
